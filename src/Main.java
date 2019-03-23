@@ -9,7 +9,24 @@ public class Main {
         Ordenacao t = new Ordenacao();
         Busca b = new Busca();
         long tempo1, tempo2;
-        String nome = "C:\\Users\\Naty\\Desktop\\English (American)..txt";
+        int op3;
+        String nome = "";
+        do {
+            System.out.println("Escolha qual dicionario quer ordenar:");
+            System.out.println("1 - English");
+            System.out.println("2 - Bulgarian");
+            System.out.println("3 - Spanish");
+            op3 = in.nextInt();
+        }while (op3<0 || op3>4);
+
+        if (op3==1){
+            nome = "./Files/English.txt";
+        }else if (op3==2){
+            nome = "./Files/Bulgarian.txt";
+        }else if (op3==3){
+            nome = "./Files/Spanish.txt";
+        }
+
         try {
             FileReader arq = new FileReader(nome);
             BufferedReader lerArq = new BufferedReader(arq);
@@ -44,25 +61,25 @@ public class Main {
                         tempo1 = System.currentTimeMillis();
                         vetorOrdenado = t.BubleSort(vetor, tamanho);
                         tempo2 = System.currentTimeMillis();
-                        System.out.printf("Tempo de Ordenação em millisegundos : %d.\n",(tempo2 - tempo1));
+                        System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                         break;
                     case 2:
                         tempo1 = System.currentTimeMillis();
                         vetorOrdenado = t.InsertionSort(vetor,tamanho);
                         tempo2 = System.currentTimeMillis();
-                        System.out.printf("Tempo de Ordenação em millisegundos : %d.\n",(tempo2 - tempo1));
+                        System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                         break;
                     case 3:
                         tempo1 = System.currentTimeMillis();
                         vetorOrdenado = t.quickSort(vetor,0,vetor.length-1);
                         tempo2 = System.currentTimeMillis();
-                        System.out.printf("Tempo de Ordenação em millisegundos : %d.\n",(tempo2 - tempo1));
+                        System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                         break;
                     case 4:
                         tempo1 = System.currentTimeMillis();
                         vetorOrdenado = t.selectionSort(vetor);
                         tempo2 = System.currentTimeMillis();
-                        System.out.printf("Tempo de Ordenação em millisegundos : %d.\n",(tempo2 - tempo1));
+                        System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                         break;
                 }
             } while (op != 0);
@@ -85,13 +102,13 @@ public class Main {
                         if (pos == -1) {
                             System.out.println("Nao contem palavra");
                             tempo2 = System.currentTimeMillis();
-                            System.out.printf("Tempo de Busca em millisegundos : %d.\n",(tempo2 - tempo1));
+                            System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                             break;
                         } else {
                             System.out.printf("Palavra na posicao [%d]", pos + 1);
                             System.out.println();
                             tempo2 = System.currentTimeMillis();
-                            System.out.printf("Tempo de Busca em millisegundos : %d.\n",(tempo2 - tempo1));
+                            System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                             break;
                         }
                     case 2:
@@ -102,19 +119,19 @@ public class Main {
                         if (pos == -1) {
                             System.out.println("Nao contem palavra");
                             tempo2 = System.currentTimeMillis();
-                            System.out.printf("Tempo de Busca em millisegundos : %d.\n",(tempo2 - tempo1));
+                            System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                             break;
                         } else {
                             System.out.printf("Palavra na posicao [%d]", pos + 1);
                             System.out.println();
                             tempo2 = System.currentTimeMillis();
-                            System.out.printf("Tempo de Busca em millisegundos : %d.\n",(tempo2 - tempo1));
+                            System.out.printf("Tempo de Ordenação em segundos : %d\n",((tempo2 - tempo1))/1000);
                             break;
                         }
                 }
             } while (op2 != 0);
 
-            FileWriter arqs = new FileWriter("C:\\Users\\Naty\\Desktop\\saida.txt");
+            FileWriter arqs = new FileWriter(".\\Files\\Saida.txt");
             PrintWriter gravarArq = new PrintWriter(arqs);
 
             for (int j = 0; j < tamanho; j++) {
