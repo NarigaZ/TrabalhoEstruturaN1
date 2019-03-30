@@ -41,11 +41,9 @@ public class ArqManager {
     }
 
     public static void ArqsClose(String[] vetorOrdenado, int tamanho) {
-        String[] vetorOrdenado2 = new String[tamanho];
-        vetorOrdenado2 = vetorOrdenado;
         try {
             for (int j = 0; j < tamanho; j++) {
-                gravarArq.println(vetorOrdenado2[j] + "[" + vetorOrdenado2[j].length() + "]");
+                gravarArq.println(vetorOrdenado[j] + "[" + vetorOrdenado[j].length() + "]");
             }
             arqs.close();
             System.out.println("Arquivo Gravado com Sucesso!");
